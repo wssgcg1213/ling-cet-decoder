@@ -53,6 +53,5 @@ void Init(v8::Local<v8::Object> exports) {
   exports->Set(Nan::New("decodeTicket").ToLocalChecked(), Nan::New<v8::FunctionTemplate>(decodeTicket)->GetFunction());
   exports->Set(Nan::New("encodeRequest").ToLocalChecked(), Nan::New<v8::FunctionTemplate>(encodeRequest)->GetFunction());
 }
-NODE_MODULE(addon, Init)
 
-
+NODE_MODULE(addon, Init);
