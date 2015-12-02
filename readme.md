@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/wssgcg1213/ling-cet-decoder.svg?branch=master)](https://travis-ci.org/wssgcg1213/ling-cet-decoder)  
 
-这是一个某网站API的decoder
+这是一个某网站API的decoder
 
 可以提供四六级查询服务
 
@@ -16,15 +16,15 @@
 
   getEncryptReqBody: 参数(cetType, schoolName, name), cetType: {CET4: 1, CET6: 2}, 学校全称, 姓名; 返回Buffer, 加密的请求体
 
-  getProvinceCodeFromSchoolName: 从学校名得到省份代码
+  getProvinceCodeFromSchoolName: 从学校名得到省份代码
 
-  getSchoolListFromProvinceName: 从省份名得到学校列表
+  getSchoolListFromProvinceName: 从省份名得到学校列表
 
   getProvinceCodeFromProvinceName: 从省份名得到省份代码
 
   encryptReqBody: 输入string, 返回Buffer, 加密的请求体
 
-  decryptResBody: 输入返回的http body, 返回String, 解密的http body
+  decryptResBody: 输入返回的http body, 返回String, 解密的http body
 
 
 
