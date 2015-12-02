@@ -1,24 +1,22 @@
-var request = require('request');
-var addon = require('./build/Release/cetdecoder-main');
-// console.log('js:', addon.decodeGrade.apply(1, [0x25,0x24,0xe4,0x0c,0x05,0x3e,0xc7,0xa8,0x1c,0xfa,0xa5,0xf2,0x3a,0x3e,0x67]));
+var c_decoder = require('./build/Release/cetdecoder-main');
 var iconv = require('iconv-lite');
-// var requestParamGBKArr = Array.prototype.slice.call();
-// console.log(readytoen);
-// console.log(readytoen.toArray())
-// console.log(new Buffer(addon.encodeRequest(readytoen)).toJSON().data.map(h => h.toString(16)).join(''))
-// console.log("未加密的请求数据", requestParamGBKArr);
-var encryptedRequertArr = new Buffer(addon.encodeRequest.apply(null, iconv.encode("type=2&provice=50&school=重庆邮电大学&name=李星颖&examroom=&m=01-04-0D-0F-05-18", 'gb2312')));
-// console.log(requestParamGBKArr);
-// console.log(addon.encodeRequest.apply(null, requestParamGBKArr).constructor, addon.encodeRequest.apply(null, requestParamGBKArr));
-request.post({
-  url: 'http://find.cet.99sushe.com/search',
-  encoding: null,
-  body: encryptedRequertArr
-  //new Buffer([0x6d,0x28,0x1a,0xbc,0x38,0x64,0xae,0x4c,0xd6,0xca,0x8d,0x60,0xd7,0x3c,0x44,0x52,0x2f,0x4e,0x2b,0x05,0x45,0xab,0x98,0x5c,0xfb,0xc4,0x99,0x48,0x60,0xbb,0x24,0xfe,0x1f,0x35,0x09,0xe9,0xba,0x0f,0x43,0x73,0xce,0x13,0x8c,0x2e,0x23,0xac,0x01,0x63,0xbe,0x52,0x6a,0xc0,0xf4,0x3e,0x71,0x1f,0x4d,0xa2,0x06,0x1b,0x88,0x1e,0xcb,0xec,0x4b,0x6b,0x03,0x46,0x9d,0xcb,0x11,0x8a,0x69,0x1c,0x73,0x91,0xdc,0xd9,0xc4])
-}, (err, req, bodyBuf) => {
-  var encryptedTicketArr = Array.prototype.slice.call(bodyBuf);
-  encryptedTicketArr = encryptedTicketArr.slice(2, encryptedTicketArr.length)
-  console.log('最终解密的准考证号:', addon.decodeTicket.apply(null, encryptedTicketArr));
-});
 
-
+module.exports = {
+  RAW_DECODER: c_decoder,
+  encryptReqBody: function (body) {
+    return new Buffer(c_decoder.encodeRequest.apply(null, iconv.encode(body, 'gb2312')));
+  },
+  decryptResBody: function (body) {
+    var encryptedTicketArr;
+    if (Buffer.isBuffer(body)) {
+      encryptedTicketArr = Array.prototype.slice.call(body);
+    } else if (Array.isArray(body)) {
+      encryptedTicketArr = body;
+    } else {
+      console.log("tip: request options encoding should be null");
+      throw new TypeError("the first argument must be a buffer or an array");
+    }
+    encryptedTicketArr = encryptedTicketArr.slice(2, encryptedTicketArr.length);
+    return c_decoder.decodeTicket.apply(null, encryptedTicketArr);
+  }
+}
