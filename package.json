@@ -1,0 +1,25 @@
+{
+  "name": "ling-cet-decoder",
+  "version": "1.0.0",
+  "description": "for decrypt 99sushe cet query api",
+  "main": "index.js",
+  "author": "Ling.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wssgcg1213/ling-cet-decoder.git"
+  },
+  "scripts": {
+    "test": "node test.js",
+    "build": "node-gyp configure build"
+  },
+  "gypfile": true,
+  "dependencies": {
+    "bindings": "~1.2.1",
+    "iconv-lite": "^0.4.13",
+    "nan": "^2.1.0",
+    "request": "^2.67.0"
+  },
+  "devDependencies": {
+    "node-gyp": "^3.2.0"
+  }
+}
