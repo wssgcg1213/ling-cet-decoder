@@ -1,6 +1,6 @@
 {
   "name": "ling-cet-decoder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "for decrypt 99sushe cet query api",
   "main": "index.js",
   "author": "Ling.",
@@ -9,7 +9,7 @@
     "url": "https://github.com/wssgcg1213/ling-cet-decoder.git"
   },
   "scripts": {
-    "test": "node test.js",
+    "test": "mocha",
     "build": "node-gyp configure build"
   },
   "gypfile": true,
@@ -20,6 +20,8 @@
     "request": "^2.67.0"
   },
   "devDependencies": {
-    "node-gyp": "^3.2.0"
+    "mocha": "^2.3.4",
+    "node-gyp": "^3.2.0",
+    "should": "^7.1.1"
   }
 }

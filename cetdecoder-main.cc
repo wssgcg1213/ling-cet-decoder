@@ -1,3 +1,8 @@
+/**
+ * Author Ling.
+ * ling@zeroling.com
+ */
+
 #include "openssl/des.h"
 #include <nan.h>
 
