@@ -32,9 +32,13 @@
 
 ``` javascript
 //无准考证查询
+var decoder = require('ling-cet-decoder');
+var request = require('request');
+
 var name = "刘晨凌",
-    school = "重庆邮电大学",
-    cetType = 2; //CET6
+  school = "重庆邮电大学",
+ cetType = 2; //1 for CET4, 2 for CET6
+
 request.post({
   url: 'http://find.cet.99sushe.com/search',
   encoding: null,
