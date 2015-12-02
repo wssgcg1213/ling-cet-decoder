@@ -4,6 +4,8 @@ var mocha = require('mocha');
 var shuold = require('should');
 
 describe('test', function () {
+  this.timeout(5000); //设置超时时间5s
+  
   it('should return a string with 15 numberic characters(准考证号)', function (cb) {
     var name = "刘晨凌",
         school = "重庆邮电大学",
