@@ -10,6 +10,20 @@
 
 
 
+### NPM Package
+
+[ling-cet-decoder](https://www.npmjs.com/package/ling-cet-decoder)
+
+
+
+### Install
+
+``` shell
+npm install ling-cet-decoder --save
+```
+
+
+
 ### API
 
   RAW_DECODER: C++模块的接口, 主要负责openssl加解密, 可忽略
