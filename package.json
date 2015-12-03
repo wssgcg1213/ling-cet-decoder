@@ -9,7 +9,7 @@
     "url": "https://github.com/wssgcg1213/ling-cet-decoder.git"
   },
   "scripts": {
-    "test": "mocha",
+    "test": "istanbul cover _mocha",
     "build": "node-gyp configure build"
   },
   "gypfile": true,
@@ -20,6 +20,7 @@
     "request": "^2.67.0"
   },
   "devDependencies": {
+    "istanbul": "^0.4.1",
     "mocha": "^2.3.4",
     "node-gyp": "^3.2.0",
     "should": "^7.1.1"
