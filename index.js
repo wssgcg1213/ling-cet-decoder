@@ -90,5 +90,6 @@ module.exports = {
   getSchoolListFromProvinceName: getSchoolListFromProvinceName,
   getProvinceCodeFromProvinceName: getProvinceCodeFromProvinceName,
   encryptReqBody: encryptReqBody,
-  decryptResBody: decryptResBody
+  decryptResBody: decryptResBody,
+  province: province
 };
