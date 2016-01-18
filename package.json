@@ -1,6 +1,6 @@
 {
   "name": "ling-cet-decoder",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "for decrypt 99sushe cet query api",
   "main": "index.js",
   "author": "Ling.",
