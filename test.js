@@ -7,9 +7,9 @@ describe('test', function () {
   this.timeout(5000); //设置超时时间5s
   
   it('should return a string with 15 numberic characters(准考证号)', function (cb) {
-    var name = "刘晨凌",
-        school = "重庆邮电大学",
-        cetType = 2; //CET6
+    var name = "朱童栋",
+        school = "浙江师范大学",
+        cetType = 1; //CET4
     request.post({
       url: 'http://find.cet.99sushe.com/search',
       encoding: null,

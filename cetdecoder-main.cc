@@ -29,7 +29,7 @@ void decodeTicket(const Nan::FunctionCallbackInfo<v8::Value>& info) {
   //   return;
   // }
   int len = info.Length();
-  unsigned char ticketKey[] = "(YesuNRY";
+  unsigned char ticketKey[] = "021yO6d<";
   unsigned char encrypted[len];
   for (int i = 0; i < len; i++) {
     encrypted[i] = info[i]->NumberValue();
@@ -40,7 +40,7 @@ void decodeTicket(const Nan::FunctionCallbackInfo<v8::Value>& info) {
 
 void encodeRequest(const Nan::FunctionCallbackInfo<v8::Value>& info) {
   int len = info.Length();
-  unsigned char requestDataKey[] = "?!btwNP^";
+  unsigned char requestDataKey[] = "PgidW;O;";
   unsigned char raw[len];
   int i;
   for (i = 0; i < len; i++) {
