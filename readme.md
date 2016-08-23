@@ -1,6 +1,6 @@
 # CET DECODER
 
-[![Build Status](https://travis-ci.org/wssgcg1213/ling-cet-decoder.svg?branch=master)](https://travis-ci.org/wssgcg1213/ling-cet-decoder)  
+[![Build Status](https://travis-ci.org/ddmax/ling-cet-decoder.svg?branch=master)](https://travis-ci.org/ddmax/ling-cet-decoder)  
 
 这是一个某网站API的decoder
 
